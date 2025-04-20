@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1ydlabv8em06"]
+
+[ext_resource type="Script" uid="uid://bmg2qodpmf7qo" path="res://Scripts/spaceship.gd" id="1_5ajj3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hl1ce"]
+size = Vector3(20.5083, 1, 10.8462)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5ajj3"]
+
+[node name="spaceship" type="RigidBody3D"]
+script = ExtResource("1_5ajj3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.344186, 2.73099, 6.47571)
+shape = SubResource("BoxShape3D_hl1ce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+transform = Transform3D(9.81464, 0, 0, 0, 1, 0, 0, 0, 5.50449, 0, 0, 0)
+mesh = SubResource("PlaneMesh_5ajj3")
